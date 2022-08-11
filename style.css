@@ -1,16 +1,17 @@
-body{
-    margin: 0;
-    padding: 0;
+body {
+  margin: 0;
+  padding: 0;
 }
-header{
-    display: flex;
-    background-color: rgb(50, 167, 145);
-    padding: 10px;
-    align-items: center;  
-    
-} 
+
+header {
+  display: flex;
+  background-color: rgb(50, 167, 145);
+  padding: 10px;
+  align-items: center;
+}
+
 header form {
-    display: flex;    
-    align-items: center;    
-    margin-left: auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
 }
