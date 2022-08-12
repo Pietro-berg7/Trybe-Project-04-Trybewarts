@@ -3,6 +3,12 @@ const contadorCaracteres = document.getElementById('counter');
 const textArea = document.getElementById('textarea');
 const checkboxAgreement = document.getElementById('agreement')
 const submitBtn = document.getElementById('submit-btn');
+const materias = document.getElementsByClassName('subject')
+const nome = document.getElementById('input-name');
+const sobrenome = document.getElementById('input-lastname');
+const nomeForms = document.getElementById('nome');
+const formData = document.getElementById('form-data');
+const evaluationForm = document.getElementById('evaluation-form');
 
 function verificaLogin() {
   const inputEmail = document.getElementsByName('email')[0];
@@ -65,11 +71,20 @@ function atualizaContador() {
 textArea.addEventListener('input', atualizaContador);
 
 function checkaSubmit() {
-  if (checkboxAgreement.checked) {    
+  if (checkboxAgreement.checked) {
     submitBtn.removeAttribute('disabled');
-  }else {    
+  } else {
     submitBtn.setAttribute('disabled', true);
   }
 }
 checkboxAgreement.addEventListener('input', checkaSubmit);
 checkaSubmit();
+
+function submit(event){ 
+  event.preventDefault()
+  nomeForms.innerHTML = `Nome: ${nome.value} ${sobrenome.value}`;
+  formData.style.display = 'flex';
+  evaluationForm.style.display = 'none' 
+}
+
+submitBtn.addEventListener('click', submit)
