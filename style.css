@@ -47,7 +47,7 @@ div {
   flex-direction: row;
 }
 
-#text-area {
+#text-area , .textarea {
   display: flex;
   flex-direction: column;
 }

@@ -1,6 +1,8 @@
-const botaoLogin = document.getElementById('botao-login');
+const loginBtn = document.getElementById('botao-login');
 const contadorCaracteres = document.getElementById('counter');
 const textArea = document.getElementById('textarea');
+const checkboxAgreement = document.getElementById('agreement')
+const submitBtn = document.getElementById('submit-btn');
 
 function verificaLogin() {
   const inputEmail = document.getElementsByName('email')[0];
@@ -10,7 +12,7 @@ function verificaLogin() {
   }
   alert('Email ou senha inválidos.');
 }
-botaoLogin.addEventListener('click', verificaLogin);
+loginBtn.addEventListener('click', verificaLogin);
 
 function criaCheckbox() {
   const check = document.getElementById('check');
@@ -61,3 +63,13 @@ function atualizaContador() {
 }
 
 textArea.addEventListener('input', atualizaContador);
+
+function checkaSubmit() {
+  if (checkboxAgreement.checked) {    
+    submitBtn.removeAttribute('disabled');
+  }else {    
+    submitBtn.setAttribute('disabled', true);
+  }
+}
+checkboxAgreement.addEventListener('input', checkaSubmit);
+checkaSubmit();
