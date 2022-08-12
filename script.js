@@ -80,11 +80,11 @@ function checkaSubmit() {
 checkboxAgreement.addEventListener('input', checkaSubmit);
 checkaSubmit();
 
-function submit(event){ 
+function submit(event) {
   event.preventDefault()
   nomeForms.innerHTML = `Nome: ${nome.value} ${sobrenome.value}`;
   formData.style.display = 'flex';
-  evaluationForm.style.display = 'none' 
+  evaluationForm.style.display = 'none'
 }
 
 submitBtn.addEventListener('click', submit)

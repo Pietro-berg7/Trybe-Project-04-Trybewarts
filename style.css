@@ -34,7 +34,9 @@ div {
   height: 500px;
 }
 
-#family , #check , #nota {
+#family,
+#check,
+#nota {
   flex-direction: column;
   align-items: flex-start;
 }
@@ -43,15 +45,18 @@ div {
   flex-direction: row;
 }
 
-#check div , #nota div {
+#check div,
+#nota div {
   flex-direction: row;
 }
 
-#text-area , .textarea {
+#text-area,
+.textarea {
   display: flex;
   flex-direction: column;
 }
-#form-data{
+
+#form-data {
   display: none;
   list-style: none;
 }
