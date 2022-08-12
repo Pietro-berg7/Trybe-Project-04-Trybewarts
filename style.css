@@ -15,3 +15,17 @@ header form {
   align-items: center;
   margin-left: auto;
 }
+
+main {
+  display: flex;
+}
+
+main form {
+  display: flex;
+  width: 675px;
+  flex-direction: column;
+}
+
+#trybewarts-forms-logo {
+  height: 500px;
+}
