@@ -57,8 +57,7 @@ criaNotas();
 
 function atualizaContador() {
   const novoContador = 500 - textArea.value.length;
-  const novoContadorTxt = novoContador.toString();
-  contadorCaracteres.innerHTML = novoContadorTxt;
+  contadorCaracteres.innerHTML = novoContador.toString();
 }
 
 textArea.addEventListener('input', atualizaContador);

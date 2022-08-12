@@ -46,7 +46,8 @@ div {
 #check div , #nota div {
   flex-direction: row;
 }
-#text-area{
+
+#text-area {
   display: flex;
   flex-direction: column;
 }
