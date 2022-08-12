@@ -1,8 +1,10 @@
 const botaoLogin = document.getElementById('botao-login');
-const inputEmail = document.getElementsByName('email')[0];
-const inputSenha = document.getElementsByName('password')[0];
+const contadorCaracteres = document.getElementById('counter');
+const textArea = document.getElementById('textarea');
 
 function verificaLogin() {
+  const inputEmail = document.getElementsByName('email')[0];
+  const inputSenha = document.getElementsByName('password')[0];
   if (inputEmail.value === 'tryber@teste.com' && inputSenha.value === '123456') {
     return alert('Olá, Tryber!');
   }
@@ -52,3 +54,11 @@ function criaNotas() {
   }
 }
 criaNotas();
+
+function atualizaContador() {
+  const novoContador = 500 - textArea.value.length;
+  const novoContadorTxt = novoContador.toString();
+  contadorCaracteres.innerHTML = novoContadorTxt;
+}
+
+textArea.addEventListener('input', atualizaContador);
