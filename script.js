@@ -1,14 +1,20 @@
 const loginBtn = document.getElementById('botao-login');
 const contadorCaracteres = document.getElementById('counter');
 const textArea = document.getElementById('textarea');
-const checkboxAgreement = document.getElementById('agreement')
+const checkboxAgreement = document.getElementById('agreement');
 const submitBtn = document.getElementById('submit-btn');
-const materias = document.getElementsByClassName('subject')
+const materias = document.getElementsByClassName('subject');
 const nome = document.getElementById('input-name');
 const sobrenome = document.getElementById('input-lastname');
-const nomeForms = document.getElementById('nome');
+const email = document.getElementById('input-email');
+const house = document.getElementById('house');
 const formData = document.getElementById('form-data');
 const evaluationForm = document.getElementById('evaluation-form');
+const nomeForms = document.getElementById('nome');
+const emailForms = document.getElementById('email');
+const houseForms = document.getElementById('casa');
+const materiasForms = document.getElementById('materias');
+const familiaForms = document.getElementById('familia');
 
 function verificaLogin() {
   const inputEmail = document.getElementsByName('email')[0];
@@ -22,7 +28,7 @@ loginBtn.addEventListener('click', verificaLogin);
 
 function criaCheckbox() {
   const check = document.getElementById('check');
-  const array = ['HoFs', 'Jest', 'Promises', 'React', 'SQL', 'Python'];
+  const array = ['HoFs ', ' Jest', ' Promises', ' React', ' SQL', ' Python'];
   const div = document.createElement('div');
   check.appendChild(div);
   for (let i = 0; i < 6; i += 1) {
@@ -77,14 +83,35 @@ function checkaSubmit() {
     submitBtn.setAttribute('disabled', true);
   }
 }
+
+function pegaMaterias() {
+  const listaMaterias = [];
+  for (let i = 0; i < materias.length; i += 1) {
+    if (materias[i].checked) {
+      listaMaterias.push(materias[i].value);
+      listaMaterias.join(', ');
+    }
+  }
+  return (listaMaterias);
+}
+
+function pegaFamilia() {
+  const familia = document.querySelector('input[name="family"]:checked').value;
+  return familia;
+}
+
 checkboxAgreement.addEventListener('input', checkaSubmit);
 checkaSubmit();
 
 function submit(event) {
-  event.preventDefault()
+  event.preventDefault();
   nomeForms.innerHTML = `Nome: ${nome.value} ${sobrenome.value}`;
+  emailForms.innerHTML = `Email: ${email.value}`;
+  houseForms.innerHTML = `Casa: ${house.value}`;
+  familiaForms.innerHTML = `Família: ${pegaFamilia()}`;
+  materiasForms.innerHTML = `Matérias: ${pegaMaterias()}`;
   formData.style.display = 'flex';
-  evaluationForm.style.display = 'none'
+  evaluationForm.style.display = 'none';
 }
 
-submitBtn.addEventListener('click', submit)
+submitBtn.addEventListener('click', submit);
