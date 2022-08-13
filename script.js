@@ -28,7 +28,7 @@ loginBtn.addEventListener('click', verificaLogin);
 
 function criaCheckbox() {
   const check = document.getElementById('check');
-  const array = ['HoFs ', ' Jest', ' Promises', ' React', ' SQL', ' Python'];
+  const array = ['HoFs', 'Jest', 'Promises', 'React', 'SQL', 'Python'];
   const div = document.createElement('div');
   check.appendChild(div);
   for (let i = 0; i < 6; i += 1) {
