@@ -15,6 +15,8 @@ const emailForms = document.getElementById('email');
 const houseForms = document.getElementById('casa');
 const materiasForms = document.getElementById('materias');
 const familiaForms = document.getElementById('familia');
+const avaliacaoForms = document.getElementById('avaliacao');
+const observacoesForms = document.getElementById('observacoes');
 
 function verificaLogin() {
   const inputEmail = document.getElementsByName('email')[0];
@@ -89,17 +91,23 @@ function pegaMaterias() {
   for (let i = 0; i < materias.length; i += 1) {
     if (materias[i].checked) {
       listaMaterias.push(materias[i].value);
-      listaMaterias.join(', ');
     }
   }
-  return (listaMaterias);
+  const materiasString = listaMaterias.join(', ');
+  return (materiasString);
 }
 
 function pegaFamilia() {
   const familia = document.querySelector('input[name="family"]:checked').value;
   return familia;
 }
-
+function pegaNota() {
+  const nota = document.querySelector('div input[name="rate"]:checked').value;
+  return nota;
+}
+function pegObservacoes() {
+  return textArea.value;
+}
 checkboxAgreement.addEventListener('input', checkaSubmit);
 checkaSubmit();
 
@@ -110,6 +118,8 @@ function submit(event) {
   houseForms.innerHTML = `Casa: ${house.value}`;
   familiaForms.innerHTML = `Família: ${pegaFamilia()}`;
   materiasForms.innerHTML = `Matérias: ${pegaMaterias()}`;
+  avaliacaoForms.innerHTML = `Avaliação: ${pegaNota()}`;
+  observacoesForms.innerHTML = `Observações: ${pegObservacoes()}`;
   formData.style.display = 'flex';
   evaluationForm.style.display = 'none';
 }
